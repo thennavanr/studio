@@ -1,0 +1,8 @@
+Rails.application.config.assets.precompile += %w( modules.js )
+Rails.application.config.assets.precompile += %w( theme.js )
+Rails.application.config.assets.precompile += %w( fs_gallery.js )
+Rails.application.config.assets.precompile += %w( jquery.min.js )
+Rails.application.config.assets.precompile += %w( jquery-ui.min.js )
+Rails.application.config.assets.precompile += %w( theme.css )
+Rails.application.config.assets.precompile += %w( responsive.css )
+Rails.application.config.assets.precompile += %w( custom.css )
