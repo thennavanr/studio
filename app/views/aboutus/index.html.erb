@@ -1,0 +1,81 @@
+<div class="fw_content_wrapper">
+  <div class="fw_content_padding">
+    <div class="content_wrapper noTitle">
+      <div class="container">
+        <div class="content_block row no-sidebar">
+          <div class="fl-container ">
+            <div class="row">
+              <div class="posts-block ">                                                   
+                <div class="contentarea">
+                  <div class="row">
+                    <div class="span8 first-module module_number_1 module_cont pb0 module_text_area">
+                      <div class="bg_title"><h2 class="headInModule">About Us</h2></div>
+                      <div class="module_content">
+                        <p>Thanks for visiting my online portfolio.  I am quite excited about building this site to display my work. Thanks a ton to my wife for motivating and helping me to made this possible.  Though I had interest in photography from my school days, inspired by few of my friend's fathers, I could not afford a camera to pursue my dream. After I came to USA to work, I bought a Minolta SLR camera and took a beginner photography class for couple of months and started taking pictures.  My interest in photography took a back seat between 2000 and 2005 when my interest turned towards martial arts. I found my passion for photography again in 2007 when I bought Nikon D80. Since then I have been learning photography by reading 100s of online articles/books and hours and hours of practice.  Initially my interest was only making portraits of kids and people. After my marriage in Feb' 2008, my wife inspired me not to limit my interest only to portraits. Since then I stared making pictures of Landscape, Architecture and subjects that interests me.  Apart from photography, i enjoy watching good movies (CASABLANCA tops the list), tasting variety of cuisines (Italian tops the list), traveling to new destinations (California tops the list) and spending quality time with my family and friends.</p> 
+                        <p> If you are interested knowing what is in my camera bag, here is the list.</p>
+                        <p> Body:   Nikon D80<br>
+                         Lenses: Nikon 18-200mm f/3.5-5.6 G ED-IF AF-S VR<br> 
+                         Nikon 50mm f/1.4 AF-S<br>     
+                         Nikon AF Nikkor 70-300mm f/4-5.6D ED<br>
+                         Flash:    SB-800 with Omni Diffuser<br> 
+                         Tripod: Amvona Aluminum Pro Series Tripod<br> 
+                         Studio lighting: I use Amvona strobe light kit, they are reasonably priced and quality products.</p>
+                      </div>
+                    </div><!-- .module_cont -->
+
+                    <div class="span4 module_number_2 module_cont pb0 module_text_area">
+                      <div class="module_content">
+                      <p><img src="<%= asset_path 'assets/about_us.jpg' %>"  alt="" width="460" height="406" /></p>
+                      </div>
+                    </div><!-- .module_cont -->                     
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fixed_bg bg1"></div>
+
+<div class="content_bg"></div>
+
+<%= javascript_include_tag "jquery-ui.min.js" %>
+<%= javascript_include_tag "modules.js" %>
+<%= javascript_include_tag "theme.js" %>
+
+<script>
+  jQuery(document).ready(function(){
+    "use strict";
+    centerWindow();
+    if (window_w > 760) {
+      jQuery('html').addClass('without_border');
+    }
+  });
+  jQuery(window).load(function(){
+    "use strict";
+    centerWindow();
+  });
+  jQuery(window).resize(function(){
+    "use strict";
+    centerWindow();
+    setTimeout('centerWindow()',500);
+    setTimeout('centerWindow()',1000);
+  });
+  function centerWindow() {
+    "use strict";
+    setTop = (window_h - jQuery('.fw_content_wrapper').height() - header.height())/2+header.height();
+    if (setTop < header.height()+50) {
+      jQuery('.fw_content_wrapper').addClass('fixed');
+      jQuery('body').addClass('addPadding');
+      jQuery('.fw_content_wrapper').css('top', header.height()+50+'px');
+      } else {
+      jQuery('.fw_content_wrapper').css('top', setTop +'px');
+      jQuery('.fw_content_wrapper').removeClass('fixed');
+      jQuery('body').removeClass('addPadding');
+    }
+  }
+</script>

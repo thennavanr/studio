@@ -1,26 +1,25 @@
-<!DOCTYPE html>
-<html class="fullscreen_page sticky_menu">
-<head>
-</head>
-<body>
-    <div class="fs_fadder hided"></div>
-  <div class="fs_sharing_wrapper hided">
-    <div class="fs_sharing">
-            <a href="javascript:void(0);" class="share_facebook"><i class="icon-facebook-square"></i></a>
-            <a href="javascript:void(0);" class="share_pinterest"><i class="icon-pinterest"></i></a>
-            <a href="javascript:void(0);" class="share_tweet"><i class="icon-twitter"></i></a>
-            <a href="javascript:void(0);" class="share_gplus"><i class="icon-google-plus-square"></i></a>
-            <a class="fs_share_close hided" href="javascript:void(0)"></a>
-        </div>
-    </div>
-  <div class="content_bg"></div>
-<%= javascript_include_tag "jquery-ui.min.js" %>
-<%= javascript_include_tag "modules.js" %>
-<%= javascript_include_tag "theme.js" %>
 
+<html class="fullscreen_page sticky_menu">
+  <head>
+  </head>
+  <body>
+    <div class="fs_fadder hided"></div>
+    <div class="fs_sharing_wrapper hided">
+      <div class="fs_sharing">
+        <a href="javascript:void(0);" class="share_facebook"><i class="icon-facebook-square"></i></a>
+        <a href="javascript:void(0);" class="share_pinterest"><i class="icon-pinterest"></i></a>
+        <a href="javascript:void(0);" class="share_tweet"><i class="icon-twitter"></i></a>
+        <a href="javascript:void(0);" class="share_gplus"><i class="icon-google-plus-square"></i></a>
+        <a class="fs_share_close hided" href="javascript:void(0)"></a>
+      </div>
+    </div>
+    <div class="content_bg"></div>
+    <%= javascript_include_tag "jquery-ui.min.js" %>
+    <%= javascript_include_tag "modules.js" %>
+    <%= javascript_include_tag "theme.js" %>
     <script>
-    gallery_set = [
-    {image: "<%= asset_path 'assets/gallery/slider/1.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/1.jpg' %>", alt: "SEASHORE", title: "SEASHORE", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
+      gallery_set = [
+      {image: "<%= asset_path 'assets/gallery/slider/1.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/1.jpg' %>", alt: "SEASHORE", title: "SEASHORE", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
       {image: "<%= asset_path 'assets/gallery/slider/2.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/2.jpg' %>", alt: "Colors", title: "Colors", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
       {image: "<%= asset_path 'assets/gallery/slider/3.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/3.jpg' %>", alt: "Forest", title: "Forest", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
       {image: "<%= asset_path 'assets/gallery/slider/4.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/4.jpg' %>", alt: "Coffee", title: "Coffee", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
@@ -38,55 +37,55 @@
       {image: "<%= asset_path 'assets/gallery/slider/16.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/16.jpg' %>", alt: "Desert", title: "Desert", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
       {image: "<%= asset_path 'assets/gallery/slider/17.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/17.jpg' %>", alt: "Seashore", title: "Seashore", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"},
       {image: "<%= asset_path 'assets/gallery/slider/18.jpeg' %>", thmb: "<%= asset_path 'assets/gallery/thumbs/18.jpg' %>", alt: "Stones", title: "Stones", description: "Discover elegant solution for your online portfolio", titleColor: "#ffffff", descriptionColor: "#ffffff"}
-    ]
+      ]
 
-    jQuery(document).ready(function(){
-      "use strict";
-      jQuery('html').addClass('hasPag');
-      jQuery('body').fs_gallery({
-        fx: 'fade', /*fade, zoom, slide_left, slide_right, slide_top, slide_bottom*/
-        fit: 'no_fit',
-        slide_time: 3300, /*This time must be < then time in css*/
-        autoplay: 1,
-        show_controls: 1,
-        slides: gallery_set
-      });
-      jQuery('.fs_share').click(function(){
-        jQuery('.fs_fadder').removeClass('hided');
-        jQuery('.fs_sharing_wrapper').removeClass('hided');
-        jQuery('.fs_share_close').removeClass('hided');
-      });
-      jQuery('.fs_share_close').click(function(){
-        jQuery('.fs_fadder').addClass('hided');
-        jQuery('.fs_sharing_wrapper').addClass('hided');
-        jQuery('.fs_share_close').addClass('hided');
-      });
-      jQuery('.fs_fadder').click(function(){
-        jQuery('.fs_fadder').addClass('hided');
-        jQuery('.fs_sharing_wrapper').addClass('hided');
-        jQuery('.fs_share_close').addClass('hided');
-      });
+      jQuery(document).ready(function(){
+        "use strict";
+        jQuery('html').addClass('hasPag');
+        jQuery('body').fs_gallery({
+          fx: 'fade', /*fade, zoom, slide_left, slide_right, slide_top, slide_bottom*/
+          fit: 'no_fit',
+          slide_time: 3300, /*This time must be < then time in css*/
+          autoplay: 1,
+          show_controls: 1,
+          slides: gallery_set
+        });
+        jQuery('.fs_share').click(function(){
+          jQuery('.fs_fadder').removeClass('hided');
+          jQuery('.fs_sharing_wrapper').removeClass('hided');
+          jQuery('.fs_share_close').removeClass('hided');
+        });
+        jQuery('.fs_share_close').click(function(){
+          jQuery('.fs_fadder').addClass('hided');
+          jQuery('.fs_sharing_wrapper').addClass('hided');
+          jQuery('.fs_share_close').addClass('hided');
+        });
+        jQuery('.fs_fadder').click(function(){
+          jQuery('.fs_fadder').addClass('hided');
+          jQuery('.fs_sharing_wrapper').addClass('hided');
+          jQuery('.fs_share_close').addClass('hided');
+        });
 
-      jQuery('.close_controls').click(function(){
-        if (jQuery(this).hasClass('open_controls')) {
-          jQuery('.fs_controls').removeClass('hide_me');
-          jQuery('.fs_title_wrapper ').removeClass('hide_me');
-          jQuery('.fs_thmb_viewport').removeClass('hide_me');
-          jQuery('header.main_header').removeClass('hide_me');
-          jQuery(this).removeClass('open_controls');
-        } else {
-          jQuery('header.main_header').addClass('hide_me');
-          jQuery('.fs_controls').addClass('hide_me');
-          jQuery('.fs_title_wrapper ').addClass('hide_me');
-          jQuery('.fs_thmb_viewport').addClass('hide_me');
-          jQuery(this).addClass('open_controls');
-        }
-      });
+        jQuery('.close_controls').click(function(){
+          if (jQuery(this).hasClass('open_controls')) {
+            jQuery('.fs_controls').removeClass('hide_me');
+            jQuery('.fs_title_wrapper ').removeClass('hide_me');
+            jQuery('.fs_thmb_viewport').removeClass('hide_me');
+            jQuery('header.main_header').removeClass('hide_me');
+            jQuery(this).removeClass('open_controls');
+            } else {
+            jQuery('header.main_header').addClass('hide_me');
+            jQuery('.fs_controls').addClass('hide_me');
+            jQuery('.fs_title_wrapper ').addClass('hide_me');
+            jQuery('.fs_thmb_viewport').addClass('hide_me');
+            jQuery(this).addClass('open_controls');
+          }
+        });
 
-      jQuery('.main_header').removeClass('hided');
-      jQuery('html').addClass('without_border');
-    });
-  </script>
+        jQuery('.main_header').removeClass('hided');
+        jQuery('html').addClass('without_border');
+      });
+    </script>
     <%= javascript_include_tag "fs_gallery"%>
-</body>
+  </body>
 </html>
