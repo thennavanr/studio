@@ -10,6 +10,7 @@ module Studio
   class Application < Rails::Application
     config.assets.enabled = true
     config.assets.version = 1.0
+    config.serve_static_assets = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # Settings in config/environments/* take precedence over those specified here.
