@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :albums
   get '/home', to:'home#index'
   get '/gallery', to:'gallery#index'
+  get '/about', to:'aboutus#index'
+
   get 'home/index'
   get 'contactus/index'
   get 'aboutus/index'
