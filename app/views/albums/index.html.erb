@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+
+
+  <head>
+</head>
+<body>
+  <div class="fullscreen_block hided">
+        <div class="fs_blog_module image-grid">
+            
+            <% @albums.each do |album| %>
+            <div class="blogpost_preview_fw element advertisement">
+            	<div class="fw_preview_wrapper">
+                    <div class="gallery_item_wrapper">
+                        <a href="simple_fullwidth_image_post.html" >
+                            <img src= <%= asset_path 'assets/album/caption/2.jpg' %> alt="" class="fw_featured_image" width="540">
+                            <div class="gallery_fadder"></div>
+                            <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
+                        </a>
+                    </div>
+                    <div class="grid-port-cont">
+                        <h6><a href="simple_fullwidth_image_post.html">Integer ante odio</a></h6>
+                        <div class="block_likes">
+                            <div class="post-views"><i class="stand_icon icon-eye"></i> <span>1187</span></div>                            
+                            <div class="gallery_likes gallery_likes_add">
+                                <i class="stand_icon icon-heart-o"></i>
+                                <span>132</span>
+                            </div>											
+                        </div>                            
+                    </div>                                            
+                </div>
+                <div class="album-pseudo1"></div>
+                <div class="album-pseudo2"></div>
+            </div> 
+          <% end %> 
+
+    	</div>                       
+
+	</div>
+   	<div class="preloader"></div>     
+    <footer class="fullwidth">
+        <div class="footer_wrapper">
+            <div class="copyright">Copyright &copy; 2014 Oyster HTML Template. All Rights Reserved.</div>
+            <div class="socials_wrapper">
+                <ul class="socials_list">
+                	<li><a class="ico_social_dribbble" target="_blank" href="http://dribbble.com/" title="Dribbble"></a></li>
+                    <li><a class="ico_social_gplus" target="_blank" href="https://plus.google.com/" title="Google+"></a></li>
+                    <li><a class="ico_social_vimeo" target="_blank" href="https://vimeo.com/" title="Vimeo"></a></li>
+                    <li><a class="ico_social_pinterest" target="_blank" href="http://pinterest.com" title="Pinterest"></a></li>
+                    <li><a class="ico_social_facebook" target="_blank" href="http://facebook.com" title="Facebook"></a></li>
+                    <li><a class="ico_social_twitter" target="_blank" href="http://twitter.com" title="Twitter"></a></li>
+                    <li><a class="ico_social_instagram" target="_blank" href="http://instagram.com" title="Instagram"></a></li>
+            	</ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </footer>
+	<div class="content_bg"></div>
+
+  <%= javascript_include_tag "jquery-ui.min.js" %>
+  <%= javascript_include_tag "modules.js" %>
+  <%= javascript_include_tag "theme.js" %>
+  
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+			"use strict";
+			setTimeout(function(){
+                jQuery('.fullscreen_block').removeClass('hided');
+			},2500);
+			setTimeout("jQuery('.preloader').remove()", 2700);			
+		});	
+    </script>  
+</body>
+
+<h1>Listing Albums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Password</th>
+      <th>Album name</th>
+      <th>Secured</th>
+      <th>Created date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.user %></td>
+        <td><%= album.password %></td>
+        <td><%= album.album_name %></td>
+        <td><%= album.secured %></td>
+        <td><%= album.created_date %></td>
+        <td><%= link_to 'Show', album %></td>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album', new_album_path %>

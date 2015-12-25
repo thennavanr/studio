@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  password: MyString
+  album_name: MyString
+  secured: false
+  created_date: 2015-12-19 18:50:21
+
+two:
+  user: MyString
+  password: MyString
+  album_name: MyString
+  secured: false
+  created_date: 2015-12-19 18:50:21
