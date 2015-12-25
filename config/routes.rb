@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
   resources :albums
+  get '/home', to:'home#index'
+  get '/gallery', to:'gallery#index'
   get 'home/index'
   get 'contactus/index'
   get 'aboutus/index'
   get 'gallery/index'
   get 'photo_listing/index'
+  root :to =>  'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
