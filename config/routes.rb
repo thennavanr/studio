@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/home', to:'home#index'
   get '/gallery', to:'gallery#index'
   get '/about', to:'aboutus#index'
+  get '/contact', to:'contactus#index'
+  get '/portfolio', to:'albums#index'
 
   get 'home/index'
   get 'contactus/index'
