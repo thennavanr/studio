@@ -34,6 +34,7 @@ gem 'spring',        group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+#gem 'aws-s3', :git =>'git@github.com:bartoszkopinski/aws-s3.git'
+gem 'aws-sdk', '~> 2'
 # Use debugger
  gem 'byebug', group: [:development, :test]

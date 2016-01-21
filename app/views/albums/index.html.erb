@@ -1,42 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-
-
-  <head>
+<head>
 </head>
 <body>
-  <div class="fullscreen_block hided">
+
+
+    <div class="fullscreen_block hided">
+    <ul class="optionset" data-option-key="filter">
+          <li class="selected"><a href="#filter" data-option-value="*">All Works</a></li>
+            <li><a data-option-value=".advertisement" href="#filter" title="View all post filed under advertisement">Advertisement</a></li>
+            <li><a data-option-value=".cities" href="#filter" title="View all post filed under cities">Cities</a></li>
+            <li><a data-option-value=".fashion" href="#filter" title="View all post filed under fashion">Fashion</a></li>
+            <li><a data-option-value=".nature" href="#filter" title="View all post filed under nature">Nature</a></li>
+            <li><a data-option-value=".portrait" href="#filter" title="View all post filed under portrait">Portrait</a></li>
+            <li><a data-option-value=".stuff" href="#filter" title="View all post filed under stuff">Stuff</a></li>
+        </ul>
         <div class="fs_blog_module image-grid">
+
+           
             
-            <% @albums.each do |album| %>
+          <% @albums.each do |album| %>
+                        
             <div class="blogpost_preview_fw element advertisement">
-            	<div class="fw_preview_wrapper">
+              <div class="fw_preview_wrapper">
                     <div class="gallery_item_wrapper">
-                        <a href="simple_fullwidth_image_post.html" >
-                            <img src= <%= asset_path 'assets/album/caption/2.jpg' %> alt="" class="fw_featured_image" width="540">
+                        <a href="simple_fullwidth_image_post.html">
+                          <img src=<%= album  %>  alt="" class="fw_featured_image" width="540">
                             <div class="gallery_fadder"></div>
                             <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
                         </a>
                     </div>
                     <div class="grid-port-cont">
-                        <h6><a href="simple_fullwidth_image_post.html">Integer ante odio</a></h6>
+                        <h6><a href="simple_fullwidth_image_post.html">Integer lacinia massa</a></h6>
                         <div class="block_likes">
-                            <div class="post-views"><i class="stand_icon icon-eye"></i> <span>1187</span></div>                            
+                            <div class="post-views"><i class="stand_icon icon-eye"></i> <span>1945</span></div>                            
                             <div class="gallery_likes gallery_likes_add">
                                 <i class="stand_icon icon-heart-o"></i>
-                                <span>132</span>
-                            </div>											
+                                <span>29</span>
+                            </div>                      
                         </div>                            
                     </div>                                            
                 </div>
-                <div class="album-pseudo1"></div>
-                <div class="album-pseudo2"></div>
             </div> 
-          <% end %> 
 
-    	</div>                       
+          <% end %>
 
-	</div>
+                 
+      </div>                       
+  </div>
+
    	<div class="preloader"></div>     
     <footer class="fullwidth">
         <div class="footer_wrapper">
@@ -72,36 +83,3 @@
     </script>  
 </body>
 
-<h1>Listing Albums</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Password</th>
-      <th>Album name</th>
-      <th>Secured</th>
-      <th>Created date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.user %></td>
-        <td><%= album.password %></td>
-        <td><%= album.album_name %></td>
-        <td><%= album.secured %></td>
-        <td><%= album.created_date %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Album', new_album_path %>
