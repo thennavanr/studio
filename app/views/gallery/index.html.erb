@@ -2,14 +2,13 @@
 </head>
 <body>
   <div class="fullscreen_block hided">
-		<ul class="optionset" data-option-key="filter">
-        	<li class="selected"><a href="#filter" data-option-value="*">All Works</a></li>
-            <li><a data-option-value=".advertisement" href="#filter" title="View all post filed under advertisement">Advertisement</a></li>
-            <li><a data-option-value=".cities" href="#filter" title="View all post filed under cities">Cities</a></li>
-            <li><a data-option-value=".fashion" href="#filter" title="View all post filed under fashion">Fashion</a></li>
-            <li><a data-option-value=".nature" href="#filter" title="View all post filed under nature">Nature</a></li>
-            <li><a data-option-value=".portrait" href="#filter" title="View all post filed under portrait">Portrait</a></li>
-            <li><a data-option-value=".stuff" href="#filter" title="View all post filed under stuff">Stuff</a></li>
+    <ul class="optionset" data-option-key="filter">
+      <li class="selected"><a href="#filter" data-option-value="*">All Works</a></li>
+      <li><a data-option-value=".baby shower" href="#filter" title="View all post filed under advertisement">Baby Shower</a></li>
+      <li><a data-option-value=".birthday" href="#filter" title="View all post filed under cities">Birthday</a></li>
+      <li><a data-option-value=".cradleceremony" href="#filter" title="View all post filed under fashion">Cradle Ceremony</a></li>
+      <li><a data-option-value=".graduation" href="#filter" title="View all post filed under fashion">Graduation</a></li>
+      <li><a data-option-value=".house warming" href="#filter" title="View all post filed under nature">House Warming</a></li>
         </ul>
         <div class="fs_blog_module image-grid">
 
@@ -22,7 +21,7 @@
             <div class="blogpost_preview_fw element advertisement">
               <div class="fw_preview_wrapper">
                 <div class="gallery_item_wrapper">
-                  <a href=<%= photo_listing_index_path(:b =>i ) %> >
+                    <a href=<%= login_path(:b =>i ) %> >
                     <!--
                     <img src= <%= asset_path 'assets/album/caption/2.jpg' %> alt="" class="fw_featured_image" width="540">
                     -->
@@ -54,7 +53,7 @@
    	<div class="preloader"></div>     
     <footer class="fullwidth">
         <div class="footer_wrapper">
-            <div class="copyright">Copyright &copy; 2014 Oyster HTML Template. All Rights Reserved.</div>
+            <div class="copyright">Copyright &copy;Ramesh Sigamani. All Rights Reserved.</div>
             <div class="socials_wrapper">
                 <ul class="socials_list">
                 	<li><a class="ico_social_dribbble" target="_blank" href="http://dribbble.com/" title="Dribbble"></a></li>

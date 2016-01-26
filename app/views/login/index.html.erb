@@ -1,0 +1,35 @@
+<head>
+</head>
+<body>
+
+  <div class="pp_block fixed" style="top: 130px;">
+    <div class="container">
+      <h1 class="pp_title">THIS CONTENT IS PASSWORD PROTECTED</h1>
+      <div class="pp_wrapper">
+        <form class="protected-post-form" action="http://www.gt3themes.com/wordpress-themes/oyster/wp-login.php?action=postpass" method="post">
+          <h3>TO VIEW IT PLEASE ENTER YOUR PASSWORD</h3>
+          <p> <input name="post_password" id="pwbox-840" type="password" size="20" placeholder="Password"><input type="submit" name="Submit" value="Submit"><br>
+          </p></form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="fixed_bg bg1"></div>
+
+    <div class="content_bg"></div>
+
+  <%= javascript_include_tag "jquery-ui.min.js" %>
+  <%= javascript_include_tag "modules.js" %>
+  <%= javascript_include_tag "theme.js" %>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+        "use strict";
+        setTimeout(function(){
+          jQuery('.fullscreen_block').removeClass('hided');
+          },2500);
+        setTimeout("jQuery('.preloader').remove()", 2700);			
+        });	
+      </script>  
+    </body>
