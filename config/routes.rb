@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/contact', to:'contactus#index'
   get '/portfolio', to:'albums#index'
   get '/photo_listing', to: 'photo_listing#index'
-  get '/login', to: 'login#index'
+  post '/login', to: 'login#index'
+  get '/login', to: 'login#show'
+  get '/login/create', to: 'login#create'
 
   get 'home/index'
   get 'contactus/index'

@@ -6,10 +6,16 @@
     <div class="container">
       <h1 class="pp_title">THIS CONTENT IS PASSWORD PROTECTED</h1>
       <div class="pp_wrapper">
-        <form class="protected-post-form" action="http://www.gt3themes.com/wordpress-themes/oyster/wp-login.php?action=postpass" method="post">
+
+        <%= form_for @auth,:url => {:action => "show"}, :html => {:class => "protected-post-form"}  do |f| %>
           <h3>TO VIEW IT PLEASE ENTER YOUR PASSWORD</h3>
-          <p> <input name="post_password" id="pwbox-840" type="password" size="20" placeholder="Password"><input type="submit" name="Submit" value="Submit"><br>
-          </p></form>
+          <p>
+          <%= password_field(:login, :pass, size: 20) %>
+          <%= hidden_field_tag :name, params['b'] %>
+          <%= submit_tag "Submit" %>
+          <br>
+          </p>
+        <%end%> 
         </div>
       </div>
     </div>
