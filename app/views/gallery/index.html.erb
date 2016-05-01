@@ -13,7 +13,7 @@
         <div class="fs_blog_module image-grid">
 
           <% @albums.each do |album| %>
-            <%= l = album.clone %> 
+            <%= l = album["url"].clone %> 
             <%= l.slice!('https://backdrop-studio.s3.amazonaws.com/gallery/clients/image/')%>
             <%= k = l.slice(0..(l.index('?'))-1) %>
             <%= i = k.slice(0..(k.index('/'))-1) %>
@@ -26,19 +26,19 @@
                     <img src= <%= asset_path 'assets/album/caption/2.jpg' %> alt="" class="fw_featured_image" width="540">
                     -->
 
-                    <img src= <%= album  %> alt="" class="fw_featured_image" width="540">
+                    <img src= <%= album["url"]  %> alt="" class="fw_featured_image" oncontextmenu="return false;"  width="540">
 
                     <div class="gallery_fadder"></div>
                     <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
                   </a>
                 </div>
                 <div class="grid-port-cont">
-                  <h6><a href="simple_fullwidth_image_post.html">Integer ante odio</a></h6>
+                <h6><a href="simple_fullwidth_image_post.html"><%= album["caption"] %></a></h6>
                   <div class="block_likes">
-                    <div class="post-views"><i class="stand_icon icon-eye"></i> <span>1187</span></div>                            
+                    <div class="post-views"><i class="stand_icon icon-eye"></i> <span><%= album["views"] %></span></div>                            
                     <div class="gallery_likes gallery_likes_add">
                       <i class="stand_icon icon-heart-o"></i>
-                      <span>132</span>
+                      <span><%= album["likes"] %> </span>
                     </div>											
                   </div>                            
                 </div>                                            
@@ -74,13 +74,21 @@
   <%= javascript_include_tag "modules.js" %>
   <%= javascript_include_tag "theme.js" %>
   
-    <script type="text/javascript">
-        jQuery(document).ready(function($){
-			"use strict";
-			setTimeout(function(){
-                jQuery('.fullscreen_block').removeClass('hided');
-			},2500);
-			setTimeout("jQuery('.preloader').remove()", 2700);			
-		});	
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+        "use strict";
+        setTimeout(function(){
+          jQuery('.fullscreen_block').removeClass('hided');
+          },2500);
+        setTimeout("jQuery('.preloader').remove()", 2700);			
+
+        iQuery('.gallery_likes gallery_likes_add').click(function(){
+          alert('hi');
+          });
+
+
+
+        });	
+
     </script>  
 </body>
