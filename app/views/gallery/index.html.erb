@@ -26,7 +26,12 @@
                     <img src= <%= asset_path 'assets/album/caption/2.jpg' %> alt="" class="fw_featured_image" width="540">
                     -->
 
+                    <%= image_tag  album["url"], lazy:true,  alt:"", class:"fw_featured_image", width:"540" %>
+
+                    <!--
                     <img src= <%= album["url"]  %> alt="" class="fw_featured_image" oncontextmenu="return false;"  width="540">
+                    -->
+
 
                     <div class="gallery_fadder"></div>
                     <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
