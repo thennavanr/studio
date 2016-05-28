@@ -24,7 +24,9 @@
                                     	<div class="cont_gallery_item">
                                             <div class="cont_gallery_wrapper">
                                                 <div class="grid-gallery-item">
-                                                  <img src=<%= album  %> alt="" oncontextmenu="return false;">
+
+                                                  <%= image_tag  album, lazy:true,  alt:"", oncontextmenu:"return false;"%>
+
                                                     <div class="gallery_fadder"></div>
                                                     <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
                                                     <a href="<%= album  %>" class="prettyPhoto gallery_list_zoom" data-rel="prettyPhoto[gallery77]"></a>
