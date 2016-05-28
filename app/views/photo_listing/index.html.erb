@@ -70,7 +70,10 @@
         <%= javascript_include_tag "theme.js" %>
 
         <script>
+
+
 		jQuery(document).ready(function(){
+      jQuery("img").lazyload();
 			"use strict";
 			if (window_w < 760) {
 				jQuery('.is_masonry').removeClass('is_masonry').addClass('listing_gallery');
