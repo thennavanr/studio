@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :albums
+  resources :album_stats
+  resources :likes
   get '/home', to:'home#index'
   get '/gallery', to:'gallery#index'
   get '/about', to:'aboutus#index'
