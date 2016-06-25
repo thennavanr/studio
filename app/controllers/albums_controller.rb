@@ -96,9 +96,15 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @path = params[:url] 
+      
+      stat = AlbumStat.where({:album => params["album_name"]}).first
+      if stat
+        view = stat.views
+        view = view +1
+        stat.update_columns(views: view)
+      end
 
-      #@album = Album.find_by_album(params[:album])
+      @path = params[:url] 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
