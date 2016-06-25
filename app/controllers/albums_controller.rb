@@ -16,7 +16,6 @@ class AlbumsController < ApplicationController
         album_name =  o.key.split('gallery/portfolio/image')[1]
         if album_name 
           album_name = album_name.split('/')[1]
-          album_name = album_name.split('.j')[0]
           puts album_name
           stat = AlbumStat.where({:album => album_name}).first
           val['url'] = url
