@@ -10,38 +10,40 @@ class AlbumsController < ApplicationController
     obj  = s3.bucket("backdrop-studio")
     b =obj.objects(prefix: "gallery/portfolio/image")
     b.each do |o|
-      url = o.presigned_url(:get, expires_in: 3600) if(o.key.include?('.jpg')) 
-      if url
-        val = {}
-        album_name =  o.key.split('gallery/portfolio/image')[1]
-        if album_name 
-          album_name = album_name.split('/')[1]
-          begin 
-          album_name.slice!('.jpg')
-          rescue Exception => ex
+      begin 
+        url = o.presigned_url(:get, expires_in: 3600) if(o.key.include?('.jpg')) 
+        if url
+          val = {}
+          album_name =  o.key.split('gallery/portfolio/image')[1]
+          if album_name 
+            album_name = album_name.split('/')[1]
+            album_name.slice!('.jpg')
             puts album_name
-            puts ex.message
-          end 
-          puts album_name
-          stat = AlbumStat.where({:album => album_name}).first
-          val['url'] = url
-          if stat
-            val['views'] = stat.views 
-            val['likes'] = stat.likes
-            val['caption'] = stat.caption 
-            val['order'] = stat.order
-            val['album_name'] = album_name
-          else
-            val['views'] = 0
-            val['likes'] = 0 
-            val['caption'] = "no name" 
-            val['order'] = rand(100)
-            val['album_name'] = album_name
+            stat = AlbumStat.where({:album => album_name}).first
+            val['url'] = url
+            if stat
+              val['views'] = stat.views 
+              val['likes'] = stat.likes
+              val['caption'] = stat.caption 
+              val['order'] = stat.order
+              val['album_name'] = album_name
+            else
+              val['views'] = 0
+              val['likes'] = 0 
+              val['caption'] = "no name" 
+              val['order'] = rand(100)
+              val['album_name'] = album_name
+            end
           end
+          @albums << val
+          @albums = @albums.sort_by{ |hash| hash['order'] }
+
         end
-        @albums << val
-        @albums = @albums.sort_by{ |hash| hash['order'] }
-      end
+
+      rescue => ex
+        puts album_name
+        puts ex.message
+      end 
     end
   end
 
