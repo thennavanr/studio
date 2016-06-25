@@ -16,8 +16,7 @@ class AlbumsController < ApplicationController
         album_name =  o.key.split('gallery/portfolio/image')[1]
         if album_name 
           album_name = album_name.split('/')[1]
-          name = album_name
-          album_name.slice! '.jpg' 
+          #album_name.slice!('.jpg') 
           stat = AlbumStat.where({:album => album_name}).first
           val['url'] = url
           if stat
