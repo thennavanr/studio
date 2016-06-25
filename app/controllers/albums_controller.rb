@@ -16,6 +16,12 @@ class AlbumsController < ApplicationController
         album_name =  o.key.split('gallery/portfolio/image')[1]
         if album_name 
           album_name = album_name.split('/')[1]
+          begin 
+          album_name.slice!('.jpg')
+          rescue Exception => ex
+            puts album_name
+            puts ex.message
+          end 
           puts album_name
           stat = AlbumStat.where({:album => album_name}).first
           val['url'] = url
