@@ -19,13 +19,16 @@ class GalleryController < ApplicationController
             val['views'] = stat1.views 
             val['likes'] = stat1.likes
             val['caption'] = stat1.caption 
+            val['order'] = stat1.order
           else
             val['views'] = 0
             val['likes'] = 0 
             val['caption'] = "no name" 
+            val['order'] = rand(100)
           end
         end
         @albums << val
+        @albums = @albums.sort_by{ |hash| hash['order'] }
       end
     end
   end

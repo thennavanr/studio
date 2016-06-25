@@ -1,29 +1,92 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @album.user %>
-</p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @album.password %>
-</p>
+<head>
+</head>
+<body>
 
-<p>
-  <strong>Album name:</strong>
-  <%= @album.album_name %>
-</p>
 
-<p>
-  <strong>Secured:</strong>
-  <%= @album.secured %>
-</p>
+<div class="main_wrapper">
+  <div class="content_wrapper">
+    <div class="container simple-post-container">
+      <div class="content_block no-sidebar row">
+        <div class="fl-container ">
+          <div class="row">                        
+            <div class="posts-block simple-post">
+              <div class="contentarea">
+                <div class="row">
+                  <div class="span12 module_cont module_blog module_none_padding module_blog_page">
+                    <div class="prev_next_links">
+                      <div class="fleft"><a href=<%= portfolio_path  %>>Back</a></div>
+                    </div>
+                    <div class="blog_post_page sp_post">
+                      <div class="pf_output_container">                                                    
+                        <div class="slider-wrapper theme-default ">
+                          <div class="nivoSlider">                                                
+                            <img src=<%= @path %> alt="" />
+                          </div>
+                        </div>
+                      </div>                                                
+                      <!-- 
+                      <div class="blogpreview_top">
+                        <div class="box_date">
+                          <span class="box_month">Mar</span>
+                          <span class="box_day">03</span>
+                        </div>                                            
+                        <div class="listing_meta">
+                          <span>in <a href="javascript:void(0)">Portrait</a></span>
+                          <span><a href="javascript:void(0)">3 comments</a></span>
+                          <span class="preview_skills">Time spent: 12 hours</span><span class="preview_skills">Camera: Canon EOS 5D Mark II</span>
+                        </div>                                        
+                        <div class="author_ava"><img alt="" src="img/avatar/2.jpg" class="avatar" height="72" width="72" /></div>
+                      </div>
+                      <h3 class="blogpost_title">Simple Fullwidth Image Post</h3>
 
-<p>
-  <strong>Created date:</strong>
-  <%= @album.created_date %>
-</p>
+-->
+                    </div><!--.blog_post_page -->
+                </div><!-- .contentarea -->
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div><!-- .fl-container -->
+          <div class="clear"></div>
+        </div>
+      </div><!-- .container -->
+    </div><!-- .content_wrapper -->
+  </div><!-- .main_wrapper -->
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+  <div class="preloader"></div>     
+  <footer class="fullwidth">
+    <div class="footer_wrapper">
+      <div class="copyright">Copyright &copy;Ramesh Sigamani. All Rights Reserved.</div>
+      <div class="socials_wrapper">
+        <ul class="socials_list">
+          <li><a class="ico_social_dribbble" target="_blank" href="http://dribbble.com/" title="Dribbble"></a></li>
+          <li><a class="ico_social_gplus" target="_blank" href="https://plus.google.com/" title="Google+"></a></li>
+          <li><a class="ico_social_vimeo" target="_blank" href="https://vimeo.com/" title="Vimeo"></a></li>
+          <li><a class="ico_social_pinterest" target="_blank" href="http://pinterest.com" title="Pinterest"></a></li>
+          <li><a class="ico_social_facebook" target="_blank" href="http://facebook.com" title="Facebook"></a></li>
+          <li><a class="ico_social_twitter" target="_blank" href="http://twitter.com" title="Twitter"></a></li>
+          <li><a class="ico_social_instagram" target="_blank" href="http://instagram.com" title="Instagram"></a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+  <div class="content_bg"></div>
+
+  <%= javascript_include_tag "jquery-ui.min.js" %>
+  <%= javascript_include_tag "modules.js" %>
+  <%= javascript_include_tag "theme.js" %>
+
+  <script type="text/javascript">
+jQuery(document).ready(function($){
+  "use strict";
+  setTimeout(function(){
+    jQuery('.fullscreen_block').removeClass('hided');
+  },2500);
+  setTimeout("jQuery('.preloader').remove()", 2700);			
+});	
+  </script>  
+</body>
+
+

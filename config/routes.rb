@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/about', to:'aboutus#index'
   get '/contact', to:'contactus#index'
   get '/portfolio', to:'albums#index'
+  get '/portfolio/show', to:'albums#show'
   get '/photo_listing', to: 'photo_listing#index'
   post '/login', to: 'login#index'
   get '/login', to: 'login#show'

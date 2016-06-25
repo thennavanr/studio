@@ -15,20 +15,26 @@ class AlbumsController < ApplicationController
         val = {}
         album_name =  o.key.split('gallery/portfolio/image')[1]
         if album_name 
-          album_name = album_name.split('/')[0]
+          album_name = album_name.split('/')[1]
+          name = album_name
           stat = AlbumStat.where({:album => album_name}).first
           val['url'] = url
           if stat
             val['views'] = stat.views 
             val['likes'] = stat.likes
             val['caption'] = stat.caption 
+            val['order'] = stat.order
+            val['album_name'] = album_name
           else
             val['views'] = 0
             val['likes'] = 0 
             val['caption'] = "no name" 
+            val['order'] = rand(100)
+            val['album_name'] = album_name
           end
         end
         @albums << val
+        @albums = @albums.sort_by{ |hash| hash['order'] }
       end
     end
   end
@@ -90,7 +96,9 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @album = Album.find(params[:id])
+      @path = params[:url] 
+
+      #@album = Album.find_by_album(params[:album])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
