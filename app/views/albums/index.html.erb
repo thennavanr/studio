@@ -14,38 +14,35 @@
             <li><a data-option-value=".portrait" href="#filter" title="View all post filed under portrait">Portrait</a></li>
             <li><a data-option-value=".stuff" href="#filter" title="View all post filed under stuff">Stuff</a></li>
         </ul>
+        
         <div class="fs_blog_module image-grid">
-
-           
-            
           <% @albums.each do |album| %>
-                        
             <div class="blogpost_preview_fw element advertisement">
               <div class="fw_preview_wrapper">
                     <div class="gallery_item_wrapper">
-                        <a href="simple_fullwidth_image_post.html">
-                          <img src=<%= album  %>  alt="" class="fw_featured_image" width="540">
-                            <div class="gallery_fadder"></div>
-                            <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
-                        </a>
+                      <a href="simple_fullwidth_image_post.html">
+
+                        <img src=<%= album['url']  %>  alt="" class="fw_featured_image" width="540">
+
+                        <div class="gallery_fadder"></div>
+                        <span class="gallery_ico"><i class="stand_icon icon-eye"></i></span>
+                      </a>
                     </div>
                     <div class="grid-port-cont">
-                        <h6><a href="simple_fullwidth_image_post.html">Integer lacinia massa</a></h6>
+                        <h6><a href="simple_fullwidth_image_post.html"></a></h6>
                         <div class="block_likes">
-                            <div class="post-views"><i class="stand_icon icon-eye"></i> <span>1945</span></div>                            
+                          <div class="post-views"><i class="stand_icon icon-eye"></i> <span><%= album['views'] %></span></div>                            
                             <div class="gallery_likes gallery_likes_add">
                                 <i class="stand_icon icon-heart-o"></i>
-                                <span>29</span>
+                                <span><%= album['likes'] %></span>
                             </div>                      
                         </div>                            
                     </div>                                            
                 </div>
             </div> 
-
           <% end %>
-
-                 
       </div>                       
+
   </div>
 
    	<div class="preloader"></div>     

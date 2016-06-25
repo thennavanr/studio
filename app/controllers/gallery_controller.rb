@@ -5,34 +5,28 @@ class GalleryController < ApplicationController
     s3 = Aws::S3::Resource.new(credentials: Aws::Credentials.new(ENV["AWS_ACCESS_KEY_ID"], ENV["AWS_SECRET_ACCESS_KEY"]),region:'us-east-1')
     obj  = s3.bucket("backdrop-studio")
     b =obj.objects(prefix: 'gallery/clients/image')
+
     b.each do |o| 
-      
-     url = o.presigned_url(:get, expires_in: 3600) if(o.key.include?('/1.jpg')) 
-     
-
-     if url 
-       val = {}
-      album_name = o.key.split("gallery/clients/image/")[1]
-
-      if album_name
-        album_name = album_name.split('/')[0]
-        stat1 = AlbumStat.where({:album => album_name}).first
-        val['url'] = url
-        if stat1
-        val['views'] = stat1.views 
-        val['likes'] = stat1.likes
-        val['caption'] = stat1.caption 
-        else
-          val['views'] = 0
-          val['likes'] = 0 
-          val['caption'] = "no name" 
+      url = o.presigned_url(:get, expires_in: 3600) if(o.key.include?('/1.jpg')) 
+      if url 
+        val = {}
+        album_name = o.key.split("gallery/clients/image/")[1]
+        if album_name
+          album_name = album_name.split('/')[0]
+          stat1 = AlbumStat.where({:album => album_name}).first
+          val['url'] = url
+          if stat1
+            val['views'] = stat1.views 
+            val['likes'] = stat1.likes
+            val['caption'] = stat1.caption 
+          else
+            val['views'] = 0
+            val['likes'] = 0 
+            val['caption'] = "no name" 
+          end
         end
+        @albums << val
       end
-      @albums << val
-     end
-
     end
-
   end
-  
 end
