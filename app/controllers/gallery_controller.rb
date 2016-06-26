@@ -20,11 +20,14 @@ class GalleryController < ApplicationController
             val['likes'] = stat1.likes
             val['caption'] = stat1.caption 
             val['order'] = stat1.order
+            val['album']=album_name
+
           else
             val['views'] = 0
             val['likes'] = 0 
             val['caption'] = "no name" 
             val['order'] = rand(100)
+            val['album']=album_name
           end
         end
         @albums << val

@@ -42,15 +42,13 @@ class AlbumStatsController < ApplicationController
   # PATCH/PUT /album_stats/1
   # PATCH/PUT /album_stats/1.json
   def update
-    respond_to do |format|
-      if @album_stat.update(album_stat_params)
-        format.html { redirect_to @album_stat, notice: 'Album stat was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album_stat }
-      else
-        format.html { render :edit }
-        format.json { render json: @album_stat.errors, status: :unprocessable_entity }
-      end
+    stat = AlbumStat.where({:album => params[:album]}).first
+    if stat1
+      likes= stat1.likes
+      likes= likes+1
+      stat1.update_columns(likes: likes)
     end
+    puts 'update like success'
   end
 
   # DELETE /album_stats/1

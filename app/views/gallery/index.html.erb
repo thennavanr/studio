@@ -26,11 +26,6 @@
                     <img src= <%= asset_path 'assets/album/caption/2.jpg' %> alt="" class="fw_featured_image" width="540"> -->
 
                     <%= image_tag  album["url"],   alt:"", class:"fw_featured_image", width:"540", lazy:true %>
-
-
-
-
-
                     <!--
                     <img src= <%= album["url"]  %> alt="" class="fw_featured_image" oncontextmenu="return false;"  width="540">
                     -->
@@ -44,7 +39,10 @@
                     <div class="post-views"><i class="stand_icon icon-eye"></i> <span><%= album["views"] %></span></div>                            
                     <div class="gallery_likes gallery_likes_add">
                       <i class="stand_icon icon-heart-o"></i>
-                      <span><%= album["likes"] %> </span>
+                      <div id ="hidden_name" style="display: none;">
+                        <%= album['album']%>
+                      </div>
+                      <span><%= rand(100) %> </span>
                     </div>											
                   </div>                            
                 </div>                                            
@@ -86,16 +84,36 @@ jQuery(document).ready(function($){
   jQuery("img").lazyload({
     effect : "fadeIn"
   });
-        "use strict";
-        setTimeout(function(){
-          jQuery('.fullscreen_block').removeClass('hided');
-          },2500);
-        setTimeout("jQuery('.preloader').remove()", 2100);			
+  "use strict";
+  setTimeout(function(){
+    jQuery('.fullscreen_block').removeClass('hided');
+  },2500);
+  setTimeout("jQuery('.preloader').remove()", 2100);			
+
+  jQuery(".gallery_likes").click(function(){
+    var cnt = jQuery(this).find('span').text();
+    cnt++;
+    jQuery(this).find('span').text(cnt);
+    var alb = 'sfdsfsdfsd';
+    alert(alb);
+    alb = jQuery(this).find('#hidden_name').text();
+    var url_album = '<%= album_stat_path(id:1)%>' + '?album='+alb
+    jQuery.ajax({
+      type: 'PUT',
+      url:url_album ,
+      data:{},
+      success: function(){
+        console.log('success');
+      }
+      
+    });
 
 
 
-
-        });	
-
-    </script>  
+  });
+});	
+  </script>  
 </body>
+
+
+
