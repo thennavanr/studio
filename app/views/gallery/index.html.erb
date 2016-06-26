@@ -94,9 +94,8 @@ jQuery(document).ready(function($){
     var cnt = jQuery(this).find('span').text();
     cnt++;
     jQuery(this).find('span').text(cnt);
-    var alb = 'sfdsfsdfsd';
     alb = jQuery(this).find('#hidden_name').text();
-    var url_album = '<%= album_stat_path(id:1)%>' + '?album='+alb
+    var url_album = '<%= album_stat_path(id:1)%>' + '?album='+alb.trim();
     jQuery.ajax({
       type: 'PUT',
       url:url_album ,
