@@ -42,7 +42,7 @@
                       <div id ="hidden_name" style="display: none;">
                         <%= album['album']%>
                       </div>
-                      <span><%= rand(100) %> </span>
+                      <span><%= album['likes'] %> </span>
                     </div>											
                   </div>                            
                 </div>                                            
@@ -95,7 +95,6 @@ jQuery(document).ready(function($){
     cnt++;
     jQuery(this).find('span').text(cnt);
     var alb = 'sfdsfsdfsd';
-    alert(alb);
     alb = jQuery(this).find('#hidden_name').text();
     var url_album = '<%= album_stat_path(id:1)%>' + '?album='+alb
     jQuery.ajax({
