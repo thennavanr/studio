@@ -43,10 +43,11 @@ class AlbumStatsController < ApplicationController
   # PATCH/PUT /album_stats/1.json
   def update
     stat = AlbumStat.where({:album => params[:album]}).first
-    if stat1
-      likes= stat1.likes
+
+    if stat
+      likes= stat.likes
       likes= likes+1
-      stat1.update_columns(likes: likes)
+      stat.update_columns(likes: likes)
     end
     puts 'update like success'
   end
