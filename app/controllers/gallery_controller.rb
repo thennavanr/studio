@@ -24,7 +24,7 @@ class GalleryController < ApplicationController
 
           else
             val['views'] = 0
-            val['likes'] = 0 
+            val['likes'] = rand(10) 
             val['caption'] = "no name" 
             val['order'] = rand(100)
             val['album']=album_name
