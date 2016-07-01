@@ -31,8 +31,10 @@ class GalleryController < ApplicationController
           end
         end
         @albums << val
-        @albums = @albums.sort_by{ |hash| hash['order'] }
       end
     end
+
+    @albums = @albums.sort_by{ |hash| hash['order'] }
+
   end
 end
