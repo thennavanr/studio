@@ -26,13 +26,13 @@ class AlbumsController < ApplicationController
               val['likes'] = stat.likes
               val['caption'] = stat.caption 
               val['order'] = stat.order
-              val['album_name'] = album_name
+              val['album'] = album_name
             else
               val['views'] = 0
               val['likes'] = 0 
               val['caption'] = "no name" 
               val['order'] = rand(100)
-              val['album_name'] = album_name
+              val['album'] = album_name
             end
           end
           @albums << val
