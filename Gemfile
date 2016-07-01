@@ -19,3 +19,4 @@ gem 'byebug', group: [:development, :test]
 
 gem "lazyload-rails"
 gem 'newrelic_rpm'
+gem 'rails_12factor'
