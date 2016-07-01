@@ -37,21 +37,19 @@
         <nav>
         <div class="menu-main-menu-container">
           <ul id="menu-main-menu" class="menu">
-            <li class="current-menu-parent menu-item-has-children">
-
-
+            <li class="<%= 'current-menu-parent' if current_page?(home_path)%> menu-item-has-children">
             <a href= <%= home_path %>><span>Home</span></a>
             </li>
-            <li class="menu-item-has-children">
+            <li class="<%= 'current-menu-parent' if current_page?(gallery_path)%> menu-item-has-children">
             <a href=<%=gallery_path %>><span>Gallery</span></a>
             </li>
-            <li class="menu-item-has-children">
+            <li class="<%= 'current-menu-parent' if current_page?(portfolio_path)%> menu-item-has-children">
             <a href=<%=portfolio_path %>><span>Portfolio</span></a>
             </li>
-            <li class="menu-item-has-children">
+            <li class="<%= 'current-menu-parent' if current_page?(about_path)%> menu-item-has-children">
             <a href=<%=about_path %>><span>About</span></a>
             </li>
-            <li class="menu-item-has-children">
+            <li class="<%= 'current-menu-parent' if current_page?(contact_path)%> menu-item-has-children">
             <a href=<%=contact_path %>><span>Contact</span></a>
             </li>
           </ul>
