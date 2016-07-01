@@ -90,11 +90,12 @@ jQuery(document).ready(function($){
   },2500);
   setTimeout("jQuery('.preloader').remove()", 2100);			
 
+  /* like */
   jQuery(".gallery_likes").click(function(){
     var cnt = jQuery(this).find('span').text();
     cnt++;
     jQuery(this).find('span').text(cnt);
-    alb = jQuery(this).find('#hidden_name').text();
+    var alb = jQuery(this).find('#hidden_name').text();
     var url_album = '<%= album_stat_path(id:1)%>' + '?album='+alb.trim();
     jQuery.ajax({
       type: 'PUT',
@@ -106,10 +107,9 @@ jQuery(document).ready(function($){
       }
       
     });
-
-
-
   });
+  /*------*/
+
 });	
   </script>  
 </body>
