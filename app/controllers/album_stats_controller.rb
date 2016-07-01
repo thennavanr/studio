@@ -19,7 +19,6 @@ class AlbumStatsController < ApplicationController
 
   # GET /album_stats/1/edit
   def edit
-    binding.pry
   end
 
   
