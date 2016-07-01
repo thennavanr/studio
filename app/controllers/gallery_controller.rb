@@ -35,6 +35,9 @@ class GalleryController < ApplicationController
     end
 
     @albums = @albums.sort_by{ |hash| hash['order'] }
+    @albums.each do |a|
+      puts "#{a['album']}==>#{a['order']}"
+    end
 
   end
 end
