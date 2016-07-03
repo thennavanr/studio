@@ -9,11 +9,13 @@ class GalleryController < ApplicationController
 
     b.each do |o| 
       url = o.presigned_url(:get, expires_in: 3600) if(o.key.include?('/1.jpg')) 
+      puts o.key
       if url 
         val = {}
         album_name = o.key.split("gallery/clients/image/")[1]
         if album_name
           album_name = album_name.split('/')[0]
+          puts album_name
           if filter
             stat1 = AlbumStat.where("album =  '#{album_name}' and  tags like '%#{filter}%' "  ).first
           else
@@ -39,7 +41,6 @@ class GalleryController < ApplicationController
         @albums << val if stat1
       end
     end
-
     @albums = @albums.sort_by{ |hash| hash['order'] }.reverse
 
   end

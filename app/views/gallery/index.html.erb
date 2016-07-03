@@ -3,7 +3,7 @@
 <body>
   <div class="fullscreen_block hided">
     <ul class="optionset" data-option-key="filter">
-      <li class="selected"><a href="#filter" data-option-value="*">All Works</a></li>
+      <li class="selected"><a href="<%= gallery_path %>" data-option-value="*">All Works</a></li>
       <li><a data-option-value=".baby shower" href="<%= gallery_path(:filter => 'bs') %>" title="View all post filed under babby shower ">Baby Shower</a></li>
       <li><a data-option-value=".birthday" href="<%= gallery_path(:filter => 'bd') %>" title="View all post filed under Birthday">Birthday</a></li>
       <li><a data-option-value=".cradleceremony" href="<%= gallery_path(:filter => 'cc') %>" title="View all post filed under Cradle Ceremony">Cradle Ceremony</a></li>
