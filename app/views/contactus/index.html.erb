@@ -17,6 +17,7 @@
                       <div class="module_content">
                         <p> Please fill out the form below so I can assist you with your upcoming event. For more personal attention, please include your phone number.</p>
                       </div>
+                      <%= flash[:notice].html_safe unless flash[:notice].blank? %>
                     </div><!-- .module_cont -->
                   </div>
 
@@ -25,7 +26,27 @@
                       <div class="module_content contact_form">
                         <div id="note"></div>
                         <div id="fields"> 
+
+                          <%= form_for @contact, :url => contactus_path , :html => {:id => 'ajax_contact-form' , :name => 'contact-form' , :method => 'post' } do |f| %>
+
+                            <div class="w50 pr7">
+                              <%= f.text_field :name, :placeholder=>"Name  *" %>
+                            </div>
+                            <div class="w50">
+                              <%= f.text_field :email,  :placeholder=>"Email  *" %>
+                            </div>
+                            <div class="clear"></div>
+
+                            <%= f.text_field :subject, :placeholder => 'Subject  *' %>
+                            <%= f.text_area :message, :id=>"message", :placeholder =>'Message   *'   %>
+
+                            <%= f.submit 'Send a message'%>
+
+                          <%end%>
+
+                           <!--  
                           <form id="ajax-contact-form" action="#">                                
+
                             <div class="w50 pr7"><input type="text" name="name" value="" placeholder="Name *" /></div>
                             <div class="w50"><input type="text" name="email" value="" placeholder="Email *" /></div>
                             <div class="clear"></div>
@@ -33,6 +54,8 @@
                             <textarea name="message" id="message" placeholder="Message *"></textarea> 
                             <input type="submit" value="Send a message"> 
                           </form> 
+-->
+
                         </div>                                                       
                       </div>
                     </div><!-- .module_cont -->
@@ -66,18 +89,6 @@
                         <div class="contact_info_wrapper">
                           <span class="contact_info_icon"><i class="icon-youtube-play"></i></span>
                           <div class="contact_info_text"><a href="#">YouTube</a></div>
-                        </div>
-                        </li>
-                        <li class="contact_info_item">
-                        <div class="contact_info_wrapper">
-                          <span class="contact_info_icon"><i class="icon-pinterest"></i></span>
-                          <div class="contact_info_text"><a href="#">Pinterest</a></div>
-                        </div>
-                        </li>
-                        <li class="contact_info_item">
-                        <div class="contact_info_wrapper">
-                          <span class="contact_info_icon"><i class="icon-instagram"></i></span>
-                          <div class="contact_info_text"><a href="#">Instagram</a></div>
                         </div>
                         </li>
                       </ul>                                        

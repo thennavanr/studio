@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/login', to: 'login#index'
   get '/login', to: 'login#show'
   get '/login/create', to: 'login#create'
+  post '/contactus', to: 'contactus#update'
 
   get 'home/index'
   get 'contactus/index'
