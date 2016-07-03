@@ -2,7 +2,6 @@ class GalleryController < ApplicationController
   def index
     @albums =[]
     filter = params[:filter]
-    filter = 'bd'
     Aws.config[:credentials] = Aws::Credentials.new( ENV["AWS_ACCESS_KEY_ID"], ENV["AWS_SECRET_ACCESS_KEY"])
     s3 = Aws::S3::Resource.new(credentials: Aws::Credentials.new(ENV["AWS_ACCESS_KEY_ID"], ENV["AWS_SECRET_ACCESS_KEY"]),region:'us-east-1')
     obj  = s3.bucket("backdrop-studio")
