@@ -19,6 +19,10 @@
                       <div class="fleft"><a href="javascript:void(0)">Previous Post</a></div>
                       <div class="fright"><a href="javascript:void(0)">Next Post</a></div>
 
+                      <% @allPortfolioPics.each do |pic| %>
+                        <link rel = "preload" as="image" href =<%= pic['url'] %> >
+                      <% end %>
+
                       <%= content_tag :div, class: "temp_information", data: {allPics: @allPortfolioPics } do %>
                       <% end %>
                       <%= content_tag :div, class: "temp_information_index", data: {index: @current_index} do %>
@@ -62,6 +66,13 @@
     </div><!-- .content_wrapper -->
   </div><!-- .main_wrapper -->
 
+      <div class="preload1-negibours" style="display: none;" >
+        <img src=<%= @path %> alt="" />
+      </div>
+      <div class="preload2-negibours" style="display: none;" >
+        <img src=<%= @path %> alt="" />
+      </div>
+
   <div class="preloader"></div>     
   <footer class="fullwidth">
     <div class="footer_wrapper">
@@ -101,28 +112,54 @@ pics= jQuery('.temp_information').data().allpics;
 current_index= jQuery('.temp_information_index').data().index;
 
 jQuery('.fright').click(function(){
-
   console.log(current_index);
+  setNextUrl(current_index);
   if(current_index == pics.length -1){
     current_index = 0;
   }else{
     current_index ++;
   }
   var next_url = pics[current_index].url
-    jQuery('.nivoSlider').children('img').attr('src',next_url);
+
+  jQuery('.nivoSlider').children('img').fadeIn(300, function(){
+    jQuery(this).attr('src',next_url);
+  }); 
 });
+
+var setNextUrl = function(curr){
+  if(curr == pics.length -1){
+    curr = 0;
+  }else{
+    curr ++;
+  }
+  var next_url = pics[curr].url
+    jQuery('#preload1-negibours').children('img').attr('src',next_url);
+}
+
+var setPreviousUrl = function(curr){
+  if(curr != 0){
+    curr --;
+  }else{
+    curr = pics.length -1;
+  }
+  var next_url = pics[curr].url
+    jQuery('#preload2-negibours').children('img').attr('src',next_url);
+}
 
 jQuery('.fleft').click(function(){
   console.log(current_index);
+  setPreviousUrl(current_index);
   if(current_index != 0){
     current_index --;
   }else{
     current_index = pics.length -1;
   }
-  var next_url = pics[current_index].url
-    jQuery('.nivoSlider').children('img').attr('src',next_url);
+  var next_url = pics[current_index].url;
+
+  jQuery('.nivoSlider').children('img').fadeIn(300, function(){
+    jQuery(this).attr('src',next_url);
+  }); 
 });
-//"
 
   </script>  
 </body>
