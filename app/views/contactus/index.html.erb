@@ -17,17 +17,22 @@
                       <div class="module_content">
                         <p> Please fill out the form below so I can assist you with your upcoming event. For more personal attention, please include your phone number.</p>
                       </div>
-
-                      <%= flash[:notice].html_safe unless flash[:notice].blank? %>
-                      <% if @contact.errors.count > 0 %>
-                        <ul>
-                          <% @contact.errors.full_messages.each do |e| %>
-                            <div class="errors">
-                              <li><%= e %></>
-                            </div>
-                          <% end  %>
-                        </ul>
-                      <% end  %>
+                      <% if @contact.errors.any? %>
+                        <div class="errors">
+                          <h4 style="color: red;" >Please fix the errors below.</h4>
+                          <ul>
+                            <% @contact.errors.full_messages.each do |e| %>
+                              <div class="errors">
+                                <li  style="color: red;" ><%= e %></>
+                              </div>
+                            <% end  %>
+                        </div>
+                          </ul>
+                        <% else %>
+                          <div class ="flash_message">
+                            <%= flash[:notice].html_safe unless flash[:notice].blank? %>
+                          </div>
+                        <% end  %>
 
                     </div><!-- .module_cont -->
                   </div>
@@ -38,7 +43,7 @@
                         <div id="note"></div>
                         <div id="fields"> 
 
-                          <%= form_for @contact, :url => contactus_path , :html => {:id => 'ajax_contact-form' , :name => 'contact-form' , :method => 'post' } do |f| %>
+                          <%= form_for @contact, :url => contact_path , :html => {:id => 'ajax_contact-form' , :name => 'contact-form' , :method => 'post' } do |f| %>
 
                             <div class="w50 pr7">
                               <%= f.text_field :name, :placeholder=>"Name  *" %>

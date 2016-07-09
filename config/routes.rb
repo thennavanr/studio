@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/gallery', to:'gallery#index'
   get '/about', to:'aboutus#index'
   get '/contact', to:'contactus#index'
+  get '/contactus', to:'contactus#index'
   get '/portfolio', to:'albums#index'
   get '/portfolio/show', to:'albums#show'
   get '/photo_listing', to: 'photo_listing#index'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   get '/login', to: 'login#show'
   get '/login/create', to: 'login#create'
   post '/contactus', to: 'contactus#update'
+  post '/contact', to: 'contactus#update'
 
   get 'home/index'
   get 'contactus/index'
