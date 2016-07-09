@@ -942,8 +942,9 @@ img.logo_retina {
 		width:32px;
 		height:24px;
 		display:block;
-		background: image-url('oyster_sprite.png') no-repeat 0 -40px;
-		background-size: 295px 90px;
+		background: asset-url('retina/oyster_sprite.png') no-repeat 0 -40px;
+    background-size: 295px 90px;
+
 		right:29px;
 		top:50%;
 		margin-top:-12px;

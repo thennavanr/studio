@@ -1,4 +1,3 @@
-
 <html class="fullscreen_page sticky_menu">
   <head>
   </head>
@@ -6,7 +5,7 @@
     <div class="fs_fadder hided"></div>
     <div class="fs_sharing_wrapper hided">
       <div class="fs_sharing">
-        <a href="javascript:void(0);" class="share_facebook"><i class="icon-facebook-square"></i></a>
+        <a href="javascript:void(0);"  class="share_facebook"><i class="icon-facebook-square"></i></a>
         <a href="javascript:void(0);" class="share_pinterest"><i class="icon-pinterest"></i></a>
         <a href="javascript:void(0);" class="share_tweet"><i class="icon-twitter"></i></a>
         <a href="javascript:void(0);" class="share_gplus"><i class="icon-google-plus-square"></i></a>
@@ -96,7 +95,30 @@
 
         jQuery('.main_header').removeClass('hided');
         jQuery('html').addClass('without_border');
+
+        jQuery('.share_facebook').click(function(){
+          fbShare();
+        });
+
+
+        function fbShare( ) {
+          var winWidth = 520;
+          var winHeight = 350;
+          var url = 'beta.ramsigman.com'
+            var descr = "dsfdsfdsdsfsdf";
+          var title = "sdfdsfdsfdfsfdsf";
+          var image = "http://s3.amazonaws.com/backdrop-studio/home/images/1.jpg"
+
+            var winTop = (screen.height / 2) - (winHeight / 2);
+          var winLeft = (screen.width / 2) - (winWidth / 2);
+          var fb_url = "http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight"
+            window.open(fb_url);
+        }
+
+
+
       });
+
     </script>
     <%= javascript_include_tag "fs_gallery"%>
   </body>

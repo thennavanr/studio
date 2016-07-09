@@ -630,7 +630,7 @@ a.fs_share_close {
     display: inline-block;
     vertical-align: middle;
     margin-left: 24px;
-    background: url(../img/oyster_sprite.png) no-repeat -259px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -259px -40px;
 }
 
 a.fs_share_close:hover {
@@ -684,12 +684,12 @@ a.fs_share_close:hover {
     height: 44px;
     left: 0;
     top: 0;
-    background: url(../img/oyster_sprite.png) no-repeat -167px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -167px -40px;
 }
 
 .fs_controls a.close_controls.open_controls:before {
     height: 45px;
-    background: url(../img/oyster_sprite.png) no-repeat -213px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -213px -40px;
 }
 
 .fs_controls a.fs_slider_prev:before {
@@ -697,7 +697,7 @@ a.fs_share_close:hover {
     height: 44px;
     left: 9px;
     top: 0;
-    background: url(../img/oyster_sprite.png) no-repeat -115px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -115px -40px;
 }
 
 .fs_controls a.fs_slider_next:before {
@@ -705,7 +705,7 @@ a.fs_share_close:hover {
     height: 44px;
     left: 12px;
     top: 0;
-    background: url(../img/oyster_sprite.png) no-repeat -141px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -141px -40px;
 }
 
 .fs_controls a.fs_pause:before {
@@ -713,7 +713,7 @@ a.fs_share_close:hover {
     height: 32px;
     left: 12px;
     top: 6px;
-    background: url(../img/oyster_sprite.png) no-repeat -92px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -92px -40px;
 }
 
 .fs_controls a.fs_play:before {
@@ -721,7 +721,7 @@ a.fs_share_close:hover {
     height: 32px;
     left: 12px;
     top: 6px;
-    background: url(../img/oyster_sprite.png) no-repeat -69px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -69px -40px;
 }
 
 .fs_controls a.fs_share:before {
@@ -729,7 +729,7 @@ a.fs_share_close:hover {
     height: 44px;
     left: 5px;
     top: 0;
-    background: url(../img/oyster_sprite.png) no-repeat -34px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -34px -40px;
 }
 
 /*Caption*/
@@ -1048,12 +1048,12 @@ a.fs_share_close:hover {
 }
 
 .ribbon_wrapper .btn_prev {
-    background: url(../img/oyster_sprite.png) no-repeat -115px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -115px -40px;
     left: 60px;
 }
 
 .ribbon_wrapper .btn_next {
-    background: url(../img/oyster_sprite.png) no-repeat -141px -40px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -141px -40px;
     right: 60px;
 }
 
@@ -1161,18 +1161,18 @@ a.fs_share_close:hover {
 }
 
 .post_controls div.fleft {
-    background: url(../img/oyster_sprite.png) no-repeat -91px -72px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -91px -72px;
 }
 
 .post_controls div.fright {
-    background: url(../img/oyster_sprite.png) no-repeat -100px -72px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -100px -72px;
 }
 
 .fw_post_close {
     width: 13px;
     height: 13px;
     margin: 6px 0 0 5px;
-    background: url(../img/oyster_sprite.png) no-repeat -78px -72px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -78px -72px;
 }
 
 canvas#kenburns {
@@ -1521,7 +1521,7 @@ a:hover span {
     width: 14px;
     height: 14px;
     display: block;
-    background: url(../img/oyster_sprite.png) no-repeat -240px -2px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -240px -2px;
     z-index: 13;
 }
 
@@ -1923,99 +1923,99 @@ footer .copyright {
 }
 
 .socials_list li a.ico_social_facebook:before {
-    background: url(../img/oyster_sprite.png) no-repeat 0px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat 0px 0;
 }
 
 .socials_list li a.ico_social_pinterest:before {
-    background: url(../img/oyster_sprite.png) no-repeat -20px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -20px 0;
 }
 
 .socials_list li a.ico_social_twitter:before {
-    background: url(../img/oyster_sprite.png) no-repeat -40px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -40px 0;
 }
 
 .socials_list li a.ico_social_instagram:before {
-    background: url(../img/oyster_sprite.png) no-repeat -60px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -60px 0;
 }
 
 .socials_list li a.ico_social_tumblr:before {
-    background: url(../img/oyster_sprite.png) no-repeat -80px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -80px 0;
 }
 
 .socials_list li a.ico_social_flickr:before {
-    background: url(../img/oyster_sprite.png) no-repeat -100px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -100px 0;
 }
 
 .socials_list li a.ico_social_youtube:before {
-    background: url(../img/oyster_sprite.png) no-repeat -120px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -120px 0;
 }
 
 .socials_list li a.ico_social_dribbble:before {
-    background: url(../img/oyster_sprite.png) no-repeat -140px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -140px 0;
 }
 
 .socials_list li a.ico_social_gplus:before {
-    background: url(../img/oyster_sprite.png) no-repeat -160px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -160px 0;
 }
 
 .socials_list li a.ico_social_vimeo:before {
-    background: url(../img/oyster_sprite.png) no-repeat -180px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -180px 0;
 }
 
 .socials_list li a.ico_social_delicious:before {
-    background: url(../img/oyster_sprite.png) no-repeat -200px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -200px 0;
 }
 
 .socials_list li a.ico_social_linked:before {
-    background: url(../img/oyster_sprite.png) no-repeat -220px 0;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -220px 0;
 }
 
 .socials_list li a.ico_social_facebook:after {
-    background: url(../img/oyster_sprite.png) no-repeat 0 -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat 0 -20px;
 }
 
 .socials_list li a.ico_social_pinterest:after {
-    background: url(../img/oyster_sprite.png) no-repeat -20px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -20px -20px;
 }
 
 .socials_list li a.ico_social_twitter:after {
-    background: url(../img/oyster_sprite.png) no-repeat -40px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -40px -20px;
 }
 
 .socials_list li a.ico_social_instagram:after {
-    background: url(../img/oyster_sprite.png) no-repeat -60px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -60px -20px;
 }
 
 .socials_list li a.ico_social_tumblr:after {
-    background: url(../img/oyster_sprite.png) no-repeat -80px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -80px -20px;
 }
 
 .socials_list li a.ico_social_flickr:after {
-    background: url(../img/oyster_sprite.png) no-repeat -100px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -100px -20px;
 }
 
 .socials_list li a.ico_social_youtube:after {
-    background: url(../img/oyster_sprite.png) no-repeat -120px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -120px -20px;
 }
 
 .socials_list li a.ico_social_dribbble:after {
-    background: url(../img/oyster_sprite.png) no-repeat -140px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -140px -20px;
 }
 
 .socials_list li a.ico_social_gplus:after {
-    background: url(../img/oyster_sprite.png) no-repeat -160px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -160px -20px;
 }
 
 .socials_list li a.ico_social_vimeo:after {
-    background: url(../img/oyster_sprite.png) no-repeat -180px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -180px -20px;
 }
 
 .socials_list li a.ico_social_delicious:after {
-    background: url(../img/oyster_sprite.png) no-repeat -200px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -200px -20px;
 }
 
 .socials_list li a.ico_social_linked:after {
-    background: url(../img/oyster_sprite.png) no-repeat -220px -20px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -220px -20px;
 }
 
 .socials_toggler {
@@ -2391,11 +2391,11 @@ h5.shortcode_accordion_item_title.state-active .ico:before {
 }
 
 .gallery_toolbar .gallery_type_selector a.btn_gallery_column {
-    background: url(../img/oyster_sprite.png) no-repeat 0 -66px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat 0 -66px;
 }
 
 .gallery_toolbar .gallery_type_selector a.btn_gallery_masonry {
-    background: url(../img/oyster_sprite.png) no-repeat -11px -66px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -11px -66px;
 }
 
 .btn_back:before {
@@ -2548,7 +2548,7 @@ h5.shortcode_accordion_item_title.state-active .ico:before {
     position: absolute;
     right: 12px;
     top: 13px;
-    background: url(../img/oyster_sprite.png) no-repeat -67px -73px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -67px -73px;
     opacity: 0.999;
 }
 
@@ -3616,7 +3616,7 @@ a.shortcode_social_icon:hover {
     width: 27px;
     height: 11px;
     display: block;
-    background: url(../img/oyster_sprite.png) no-repeat 0 -78px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat 0 -78px;
     position: absolute;
     top: 50%;
     margin: -5px 0 0 -12px;
@@ -5654,7 +5654,7 @@ mc_signup_submit {
     width: 14px;
     height: 14px;
     display: block;
-    background: url(../img/oyster_sprite.png) no-repeat -240px -2px;
+    background: url(asset-url('retina/oyster_sprite.png')) no-repeat -240px -2px;
     z-index: 13;
 }
 
