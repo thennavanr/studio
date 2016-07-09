@@ -9,6 +9,7 @@ class ContactusController < ApplicationController
       mail2 = FeedBackMailer.contact_us_email(@contact)
 
       flash[:notice] = 'Thanks for Your Message, will contact you asap.'
+      @contact = Contact.new
       render 'index'
     else
       flash[:notice] = 'Error:'
