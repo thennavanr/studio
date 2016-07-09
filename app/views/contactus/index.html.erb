@@ -17,7 +17,18 @@
                       <div class="module_content">
                         <p> Please fill out the form below so I can assist you with your upcoming event. For more personal attention, please include your phone number.</p>
                       </div>
+
                       <%= flash[:notice].html_safe unless flash[:notice].blank? %>
+                      <% if @contact.errors.count > 0 %>
+                        <ul>
+                          <% @contact.errors.full_messages.each do |e| %>
+                            <div class="errors">
+                              <li><%= e %></>
+                            </div>
+                          <% end  %>
+                        </ul>
+                      <% end  %>
+
                     </div><!-- .module_cont -->
                   </div>
 

@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   get 'gallery/index'
   get 'photo_listing/index'
   root :to =>  'home#index'
-
+  if Rails.env.development?
+    mount MailPreview => 'mail_view'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

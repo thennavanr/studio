@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p><b>Name:</b> <%= @contact.name.titleize  if @contact.name %></p>
+    <p><b>Email: </b> <%= @contact.email if @contact.email%></p>
+    <p><b>Subject:</b>  <%= @contact.subject.titleize   if @contact.subject  %> </p>
+    <p><b>Message:</b>  <%= @contact.message   if @contact.message %></p>
+    <p>
+    <%= %><br>
+    </p>
+    <p>
+    Thanks,<br>
+    RamSigman.
+    <%= %>.
+    </p>
+  </body>
+</html>
+
+

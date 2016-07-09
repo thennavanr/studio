@@ -2,9 +2,29 @@
   <head>
   </head>
   <body>
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=121010401253042";
+fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
     <div class="fs_fadder hided"></div>
     <div class="fs_sharing_wrapper hided">
       <div class="fs_sharing">
+
+        <div class="fb-share-button" data-href="http://beta.ramsigman.com/" data-layout="button" data-size="small" data-mobile-iframe="true">
+        <a  class="fb-xfbml-parse-ignore share_facebook"><i class="icon-facebook-square"></i></a>
+          <i class="icon-facebook-square"></i>
+        </div>
+
+
         <a href="javascript:void(0);"  class="share_facebook"><i class="icon-facebook-square"></i></a>
         <a href="javascript:void(0);" class="share_pinterest"><i class="icon-pinterest"></i></a>
         <a href="javascript:void(0);" class="share_tweet"><i class="icon-twitter"></i></a>
@@ -95,25 +115,6 @@
 
         jQuery('.main_header').removeClass('hided');
         jQuery('html').addClass('without_border');
-
-        jQuery('.share_facebook').click(function(){
-          fbShare();
-        });
-
-
-        function fbShare( ) {
-          var winWidth = 520;
-          var winHeight = 350;
-          var url = 'beta.ramsigman.com'
-            var descr = "dsfdsfdsdsfsdf";
-          var title = "sdfdsfdsfdfsfdsf";
-          var image = "http://s3.amazonaws.com/backdrop-studio/home/images/1.jpg"
-
-            var winTop = (screen.height / 2) - (winHeight / 2);
-          var winLeft = (screen.width / 2) - (winWidth / 2);
-          var fb_url = "http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight"
-            window.open(fb_url);
-        }
 
 
 

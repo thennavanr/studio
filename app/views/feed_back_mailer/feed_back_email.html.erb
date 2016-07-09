@@ -4,15 +4,19 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= %></h1>
+    <h1>Hi <%= @contact.name.titleize%></h1>
+    <h2>Thank you for contacting us, <%= %></h2>
     <p>
-    You have successfully signed up to example.com,
-    your username is: <%= %>.<br>
+    I will keep in touch with you as soon as possbile.
+    <%= %>.<br>
     </p>
     <p>
-    To login to the site, just follow this link: <%= %>.
+    Thanks,<br>
+    RamSigman.
+    <%= %>.
     </p>
-    <p>Thanks for joining and have a great day!</p>
+    <a href=<%= home_path %>  class="logo">
+      <img src="<%= image_url 'retina/logo.png' %>" alt="" class="logo_retina">
+    </a>
   </body>
 </html>
-

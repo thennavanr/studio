@@ -20,3 +20,4 @@ gem 'byebug', group: [:development, :test]
 gem "lazyload-rails"
 gem 'newrelic_rpm'
 gem 'rails_12factor'
+gem "mail_view", "~> 2.0.4"
