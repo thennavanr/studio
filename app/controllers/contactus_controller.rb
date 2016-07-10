@@ -5,8 +5,8 @@ class ContactusController < ApplicationController
   def update
     @contact = Contact.new(contactus_params)
     if @contact.save
-      mail1  = FeedBackMailer.feed_back_email(@contact)
-      mail2 = FeedBackMailer.contact_us_email(@contact)
+      mail1  = FeedBackMailer.feed_back_email(@contact).deliver
+      mail2 = FeedBackMailer.contact_us_email(@contact).deliver
 
       flash[:notice] = 'Thanks for Your Message, will contact you asap.'
       @contact = Contact.new
