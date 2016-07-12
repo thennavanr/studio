@@ -113,17 +113,14 @@ current_index= jQuery('.temp_information_index').data().index;
 
 jQuery('.fright').click(function(){
   console.log(current_index);
-  setNextUrl(current_index);
+  //setNextUrl(current_index);
   if(current_index == pics.length -1){
     current_index = 0;
   }else{
     current_index ++;
   }
   var next_url = pics[current_index].url
-
-  jQuery('.nivoSlider').children('img').fadeIn(300, function(){
-    jQuery(this).attr('src',next_url);
-  }); 
+    jQuery('.nivoSlider').children('img').attr('src',next_url);
 });
 
 var setNextUrl = function(curr){
@@ -148,17 +145,14 @@ var setPreviousUrl = function(curr){
 
 jQuery('.fleft').click(function(){
   console.log(current_index);
-  setPreviousUrl(current_index);
+  //setPreviousUrl(current_index);
   if(current_index != 0){
     current_index --;
   }else{
     current_index = pics.length -1;
   }
   var next_url = pics[current_index].url;
-
-  jQuery('.nivoSlider').children('img').fadeIn(300, function(){
-    jQuery(this).attr('src',next_url);
-  }); 
+  jQuery('.nivoSlider').children('img').attr('src',next_url);
 });
 
   </script>  
